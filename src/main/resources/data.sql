@@ -10,3 +10,12 @@ INSERT INTO app_user (id, first_name, last_name, password, username) VALUES (2, 
 INSERT INTO user_role(user_id, role_id) VALUES(1,1);
 INSERT INTO user_role(user_id, role_id) VALUES(2,1);
 INSERT INTO user_role(user_id, role_id) VALUES(2,2);
+
+INSERT INTO product (id, name, price, picture_url ) VALUES (1L, 'TV Set', 300.00, 'http://placehold.it/200x100');
+INSERT INTO product (id, name, price, picture_url ) VALUES (2L, 'Game Console', 200.00, 'http://placehold.it/200x100');
+INSERT INTO product (id, name, price, picture_url ) VALUES (3L, 'Sofa', 100.00, 'http://placehold.it/200x100');
+INSERT INTO product (id, name, price, picture_url ) VALUES (4L, 'Icecream', 5.00, 'http://placehold.it/200x100');
+INSERT INTO product (id, name, price, picture_url ) VALUES (5L, 'Beer', 3.00, 'http://placehold.it/200x100');
+INSERT INTO product (id, name, price, picture_url ) VALUES (6L, 'Phone', 500.00, 'http://placehold.it/200x100');
+INSERT INTO product (id, name, price, picture_url ) VALUES (7L, 'Watch', 30.00, 'http://placehold.it/200x100');
+

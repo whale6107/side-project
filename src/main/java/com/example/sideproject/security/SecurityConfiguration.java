@@ -24,18 +24,32 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	
-
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+          .inMemoryAuthentication()
+          .withUser("iii")
+          .password("123")
+          .roles("USER");
+    }
 	
 	@Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
 
 		
         httpSecurity.authorizeRequests().antMatchers("/").permitAll().and()
-                .authorizeRequests().antMatchers("/console/**").permitAll();
+                .authorizeRequests().antMatchers("/**").permitAll();
 
-        httpSecurity.csrf().disable();
+        httpSecurity.csrf().disable().authorizeRequests()
+        .antMatchers("/").permitAll()
+        .anyRequest()
+        .authenticated()
+        .and()
+        .httpBasic().disable();
+        
         httpSecurity.headers().frameOptions().disable();
     }
+	
 	
 
 }
